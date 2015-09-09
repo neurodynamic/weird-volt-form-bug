@@ -1,0 +1,76 @@
+@import '../variables'
+@import '../mixins'
+
+ul.entries li
+  @include flex-row
+  flex-wrap: nowrap
+
+  &:before
+    content: '['
+    font-size: 70px
+    margin: -52px 24px 52px -24px
+    width: 0
+    height: 0
+    color: transparent
+
+  &:after
+    content: ']'
+    font-size: 70px
+    margin: -52px 0 52px 0
+    width: 0
+    height: 0
+    color: transparent
+
+  &:hover
+    &:before, &:after
+      color: rgba($color-main, 0.2)
+
+
+  .entry
+
+    .function
+      cursor: pointer
+      color: $color-actionable
+
+      i.fa.fa-eye
+        color: transparent
+        width: 0
+        margin-left: 5px
+        margin-right: -5px
+        display: inline-block
+
+      i.fa.fa-eye-slash
+        display: none
+        width: 0
+        margin-left: 5px
+        margin-right: -5px
+
+      &:hover
+        i.fa.fa-eye
+          color: inherit
+
+    .execution
+      @include flex-row
+      flex-wrap: nowrap
+      justify-content: flex-start
+      min-width: 120px
+
+
+  &.active
+
+    &:before, &:after
+      color: rgba($color-main, 0.45)
+
+    .entry
+      .function
+
+        i.fa.fa-eye
+          display: none
+
+        i.fa.fa-eye-slash
+          display: none
+
+        &:hover
+          i.fa.fa-eye-slash
+            display: inline-block
+            margin-left: 5px

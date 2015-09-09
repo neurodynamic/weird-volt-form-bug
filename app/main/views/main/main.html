@@ -1,0 +1,34 @@
+<:Title>
+  {{ view main_path, "title", {controller_group: 'main'} }}
+  
+<:Body>
+  <!-- <:user_templates:menu /> -->
+  <!-- <:volt:notices /> -->
+  <div class="page-wrapper">
+    <header>
+      <div class="logo">
+        <a href="/">
+          Bug Demo App
+        </a>
+      </div>
+
+      <ul class="links">
+        <:nav href="/about">About</:nav>
+        <:nav href="/profile">Profile</:nav>
+        <:nav href="/login">Login</:nav>
+      </ul>
+    </header>
+
+    <main>
+      {{ view main_path, 'body', {controller_group: 'main'} }}
+    </main>
+
+    <footer>
+    </footer>
+  </div>
+
+<:Nav>
+  <li>
+    <a href="{{ attrs.href }}" class="{{ if active_tab? }}active{{ end }}">{{ yield }}</a>
+  </li>
+

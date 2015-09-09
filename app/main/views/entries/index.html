@@ -1,0 +1,14 @@
+<:Title>
+  Demo App
+  
+<:Body>
+
+  <:search-bar />
+
+  <ul class="contexts">
+    {{ matching_contexts.each_with_index do |context, c_index| }}
+      {{ if c_index < 3 }}
+        <:context model="{{context}}" />
+      {{ end }}
+    {{ end }}
+  </ul>

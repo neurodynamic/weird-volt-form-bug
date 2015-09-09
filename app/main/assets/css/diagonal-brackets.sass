@@ -1,0 +1,85 @@
+@import 'variables'
+@import 'mixins'
+
+
+.diagonal-bracket-container
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  background-color: rgba($color-main,0.075)
+  border-radius: 0 5px 0 5px
+
+  .bracketed-content
+    width: 100%
+
+  .bracket
+    @include flex-row
+    height: 10px
+    font-size: 70px
+
+    h3
+      font-size: 24px
+      margin: 0 10px
+
+    h4
+      font-size: 20px
+      margin: 0 10px
+
+    span.buttonish
+      font-size: 20px
+      margin: 0 5px 2px
+
+    span.buttonish, .button, button
+      z-index: 100
+
+
+    &.top-left
+      align-self: flex-start
+      margin-top: -5px
+      margin-left: -36px
+      top: 0
+
+
+    &.bottom-right
+      align-self: flex-end
+      margin-bottom: -5px
+      margin-right: -36px
+      top: 0
+    
+    .bracket-element
+      z-index: -100
+      height: 10px
+      line-height: 10px
+      
+      &.line
+        overflow: hidden
+
+      &.middle
+        font-size: 90px
+        padding-bottom: 10px
+        // margin: 0 -4px 6px
+
+  &.small-brackets
+    border-radius: 0 5px 0 5px
+
+    .bracket
+      font-size: 40px
+
+      &.top-left
+        margin-top: -5px
+        margin-left: -20px
+
+      &.bottom-right
+        margin-bottom: -5px
+        margin-right: -20px
+
+    
+      .bracket-element.middle
+        font-size: 50px
+        padding-bottom: 3px
+        margin: 0 -4px 6px
+
+      button, .button, span.buttonish
+        font-size: 17px
+        padding: 0 6px 1px
+      

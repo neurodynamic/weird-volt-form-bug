@@ -1,0 +1,44 @@
+@import 'variables'
+@import 'mixins'
+
+header, footer
+  background-color: $color-pc
+  color: black
+  padding: 0 10%
+  min-height: 50px
+  @include flex-row
+  justify-content: space-between
+  font-family: 'Roboto Slab', sans-serif
+
+  .logo
+    font-size: 24px
+    margin: 10px 0
+    font-weight: bold
+
+  .copyright
+    font-size: 19px
+    margin: 10px
+  
+  a, a:hover, a:visited, a:focus
+    color: black
+    outline: none
+
+  ul
+    @include flex-row
+    list-style: none
+    margin: 0
+
+    li
+      margin: 10px 0
+      padding: 8px
+
+      a
+        padding: 8px
+
+        &:hover
+          border-top: 2px solid rgba(0,0,0,0.5)
+          border-bottom: 2px solid rgba(0,0,0,0.5)
+
+        &.active
+          border-top: 2px solid black
+          border-bottom: 2px solid black

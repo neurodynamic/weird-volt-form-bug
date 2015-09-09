@@ -1,0 +1,54 @@
+<:Body>
+  <form e-submit="create_entry" class="manage-entry diagonal-bracket-container small-brackets">
+
+    <div class="bracket top-left">
+      <div class="bracket-element">┏</div>
+      <h4>create new {{category_data[current_category][:entry_term]}}</h4>
+      <div class="bracket-element">━</div>
+    </div>
+
+    <div class="fields">
+      <div class="field">
+        <label for="function">{{category_data[current_category][:function_term]}}</label>
+        <input name="function" id="function" type="text" class="validate" value="{{ buffer.function }}" placeholder="e.g. {{category_data[current_category][:function_example]}}">
+      </div>
+
+      <div class="field">
+        <label for="execution">{{category_data[current_category][:execution_term]}}</label>
+        <input name="execution" id="execution" type="text" class="validate" value="{{ buffer.execution }}" placeholder="e.g. {{category_data[current_category][:execution_example]}}">
+      </div>
+
+      <div class="field">
+        <label for="tags">Tags</label>
+        <input name="tags" id="tags" type="text" class="validate" value="taggytag" placeholder="e.g. #some #awesome #tags">
+      </div>
+
+      <div class="preview">
+        {{buffer.execution}}
+        <br>
+        <span class="tags">some tags</span>
+      </div>
+
+      <div class="field">
+        <label for="example">Example (optional)</label>
+        <input name="example" id="example" type="text" class="validate" value="{{ buffer.example }}">
+      </div>
+
+      <div class="preview">
+        {{buffer.example}}
+      </div>
+
+      <div class="field">
+        <label for="extra_info">Extra Info (if any)</label>
+        <input name="extra_info" id="extra_info" type="text" class="validate" value="{{ buffer.extra_info }}">
+      </div>
+    </div>
+
+    <div class="bracket bottom-right">
+      <div class="bracket-element">━</div>
+      <a class="button" e-click="trigger('canceled')">cancel</a>
+      <div class="bracket-element middle">‑</div>
+      <button>create</button>
+      <div class="bracket-element">┛</div>
+    </div>
+  </form>

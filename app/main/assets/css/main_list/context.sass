@@ -1,0 +1,34 @@
+@import '../variables'
+@import '../mixins'
+
+
+.context
+  width: 100%
+  margin-bottom: 30px
+  z-index: 50
+  
+  ul.entries
+    @include flex-row
+    justify-content: flex-start
+    align-content: flex-start
+    align-items: flex-end
+    padding: 20px 0px 20px 35px
+    flex-wrap: nowrap
+    overflow: hidden
+    margin-right: 5px
+    border-right: 40px solid transparent
+
+    &.showing-all
+      flex-wrap: wrap
+      justify-content: space-between
+      padding: 20px 35px
+      margin-right: 0
+      border-right: none
+
+      li
+        max-width: 45%
+
+    li
+      margin: 10px 15px
+      max-width: 200px
+      // min-width: 120px

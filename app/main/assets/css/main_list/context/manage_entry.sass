@@ -1,0 +1,34 @@
+@import '../../variables'
+@import '../../mixins'
+
+.manage-entry
+  margin: 10px 20px 30px
+  
+  .entry
+    padding: 20px
+
+    .function
+      cursor: auto
+      color: $color-main
+
+
+form.manage-entry
+  .fields
+    padding: 20px
+    
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+
+    .field, .preview
+      min-width: 40%
+      padding: 10px
+      flex: 1 1
+
+      label
+        display: block
+        width: 100%
+
+      input
+        display: block
+        width: 100%

@@ -1,0 +1,47 @@
+@import '../variables'
+@import '../mixins'
+
+.search
+  display: flex
+  justify-content: center
+  padding: 20px
+  color: $color-actionable
+
+  ::-webkit-input-placeholder
+    color: rgba($color-actionable,0.5)
+  :-moz-placeholder
+    color: rgba($color-actionable,0.5)
+  ::-moz-placeholder
+    color: rgba($color-actionable,0.5)
+  :-ms-input-placeholder
+    color: rgba($color-actionable,0.5)
+  
+  label i
+    font-size: 40px
+    margin-left: 10px
+    border: 3px solid $color-actionable
+    color: $color-actionable
+    border-radius: 7px
+    padding: 5px 10px 7px
+    cursor: pointer
+
+  span
+    margin: 4px 8px
+    font-size: 80px
+    line-height: 30px
+
+  input
+    flex: 1
+    background-color: $color-main-background
+    color: $color-actionable
+    font-size: 25px
+
+    border: none
+    border-radius: 0
+    border-bottom: 3px solid rgba($color-actionable,0.9)
+
+    &:focus
+      outline: none
+      margin-bottom: -1px
+      padding-bottom: 0
+      border-bottom: 5px solid $color-actionable

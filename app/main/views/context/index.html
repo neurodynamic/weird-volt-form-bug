@@ -1,0 +1,43 @@
+
+  <li>
+    <div class="context diagonal-bracket-container">
+      <div class="bracket top-left">
+        <div class="bracket-element corner">┏</div>
+        <h3>{{ model.name }}</h3>
+        <div class="bracket-element line">━</div>
+      </div>
+
+      <div class="bracketed-content">
+        <ul class="entries {{showing_all_class}}">
+
+          {{ matching_entries.each_with_index do |entry, e_index| }}
+
+            {{ if show_all or e_index < 6 }}
+              <li class="{{active_class(entry)}}">
+                <div class="entry">
+                  <div class="function" e-click="set_or_toggle_active_entry(entry)">{{ entry.function }}<i class="fa fa-eye-slash"></i><i class="fa fa-eye"></i></div>
+                  <div class="execution">{{entry.execution}}</div>
+                </div>
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+
+        {{ if managing_an_entry? }}
+          <:main:manage_entry model="{{active_entry}}" e-finished="reset_active_entry" e-flagged_for_deletion="remove(event)"/>
+        {{ end }}
+
+        {{ if new_form_active }}
+          <:main:new_entry model="{{model}}" e-finished="toggle_new_form" />
+        {{ end }}
+      </div>
+
+      <div class="bracket bottom-right">
+        <div class="bracket-element line">━</div>
+        <button e-click="toggle_show_all">{{ badge_text }}</button>
+        <div class="bracket-element middle">‑</div>
+          <button e-click="toggle_new_form">new {{category_data[current_category][:entry_term]}}</button>
+        <div class="bracket-element corner">┛</div>
+      </div>
+    </div>
+  </li>
