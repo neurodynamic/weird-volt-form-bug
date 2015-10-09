@@ -1,6 +1,6 @@
 1. Run bundle exec volt runner runners/seeds.rb
 2. Run bundle exec volt runner runners/generate_random_data.rb
-3. Open in browser
+3. Open in Google Chrome browser (or it will look weird)
 4. Click on a page in the first group of pages
 5. Click 'edit this url'
 6a. Click on one of the "new url" links, and the "edit this url" form should inputs should go blank
